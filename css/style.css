@@ -1,0 +1,141 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: Sonic;
+    src: url(../fonts/sonic-font.ttf);
+}
+
+.jogo-sonic {
+    position: relative;
+    border-bottom: 50px solid rgb(13, 160, 0);
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+}
+
+.pipe {
+    z-index: 10;
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    animation: pipe-scroll 1.5s infinite linear;
+}
+
+.clouds {
+    position: absolute;
+    animation: clouds-scroll 10s infinite linear;
+}
+
+.sonic {
+    width: 200px;
+    bottom: -10px;
+    position: absolute;
+    z-index: 9;
+}
+
+.jump {
+    animation: jump 1000ms linear;
+}
+
+.game-over {
+    top: 100%;
+    position: relative;
+    font-family: Sonic;
+    font-size: 150px;
+    text-align: center;
+    color: #0704c7;
+    letter-spacing: 10px;
+    -webkit-text-stroke: rgb(255, 185, 32);
+    -webkit-text-stroke-width: 8px;
+}
+
+.gradient-custom {
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, rgb(19, 244, 252), rgb(172, 246, 248))
+}
+
+@keyframes pipe-scroll {
+    from {
+        right: -150px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clouds-scroll {
+    from {
+        right: -1280px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    10% {
+        bottom: 10%;
+    }
+    20% {
+        bottom: 20%;
+    }
+    30% {
+        bottom: 30%;
+    }
+    40% {
+        bottom: 35%;
+    }
+    50% {
+        bottom: 40%;
+    }
+    60% {
+        bottom: 35%;
+    }
+    70% {
+        bottom: 30%;
+    }
+    80% {
+        bottom: 20%;
+    }
+    90% {
+        bottom: 10%;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes death {
+    50% {
+        bottom: 300px;
+    }
+    100% {
+        transform: scale(0.5);
+        bottom: -100%;
+    }
+}
+
+@keyframes GO {
+    0% {
+        top: 100%;
+    }
+    40% {
+        top: 10%;
+    }
+    100% {
+        top: 10%
+    }
+}
