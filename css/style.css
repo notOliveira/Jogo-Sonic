@@ -33,6 +33,7 @@ html {
 
 .clouds {
     position: absolute;
+    z-index: 7;
     animation: clouds-scroll 10s infinite linear;
 }
 
@@ -47,8 +48,28 @@ html {
     animation: jump 1000ms linear;
 }
 
+.jumps {
+    position: absolute;
+    display: inline-block;  
+    z-index: 9;
+    margin-left: 50px;
+    font-family: Sonic;
+    font-size: 40px;
+    text-align: left;
+    color: #0704c7;
+    letter-spacing: 2px;
+    -webkit-text-stroke: rgb(255, 185, 32);
+    -webkit-text-stroke-width: 3px;
+}
+
+.jump-count {
+    left: 200px;
+
+}
+
 .game-over {
     top: 100%;
+    z-index: 100;
     position: relative;
     font-family: Sonic;
     font-size: 150px;
