@@ -59,7 +59,7 @@ const loop = setInterval(() => {
     
     if (collision == true) {
 
-        console.log('loop');
+        clearInterval(loop);
 
         /* PARAR PIPE E NUVENS */
         clouds.style.animation = 'none';
@@ -75,12 +75,10 @@ const loop = setInterval(() => {
         /* ANIMAÇÃO DE GAME OVER */
         game_over.style.animation = 'GO 2000ms linear';
         clearTimeout(jump_timeout);
-        sonic.style.animation = 'death 1500ms ease-out';
+        sonic.style.animation = 'death 2000ms ease-out';
         setInterval(reload, 2000);
     }
 
-    // collision = false; 
-
-}, 10);
+}, 1);
 
 document.addEventListener('keypress', jump);
