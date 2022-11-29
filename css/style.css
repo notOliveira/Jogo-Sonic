@@ -95,10 +95,10 @@ html {
 }
 
 @keyframes clouds-scroll {
-    from {
+    0% {
         right: -1280px;
     }
-    to {
+    100% {
         right: 100%;
     }
 }
