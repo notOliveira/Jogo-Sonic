@@ -69,6 +69,7 @@ const loop = setInterval(() => {
         pipe.style.left = `${pipePosition}px`;
 
         /* PARAR SONIC*/
+        disable()
         sonic.style.bottom = `${sonicPosition}px`;
         sonic.src = './img/sonic-death.png';
 
