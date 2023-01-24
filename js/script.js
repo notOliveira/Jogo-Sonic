@@ -1,7 +1,8 @@
 const sonic = document.querySelector('.sonic');
 const pipe = document.querySelector('.pipe');
 const game_over = document.querySelector('.game-over');
-const clouds = document.querySelector('.clouds');
+const clouds1 = document.querySelector('#nuvem1');
+const clouds2 = document.querySelector("#nuvem2")
 
 var count_jump = 0;
 var score = 0;
@@ -51,7 +52,8 @@ const loop = setInterval(() => {
     score += 1
     document.getElementById("score").textContent=`${score}`;
     const pipePosition = pipe.offsetLeft;
-    const cloudsPosition = clouds.offsetLeft;
+    const cloudsPosition1 = clouds1.offsetLeft;
+    const cloudsPosition2 = clouds2.offsetLeft - 1280; 
     const sonicPosition = +window.getComputedStyle(sonic).bottom.replace('px', '');
 
     collision = pipePosition <= 235 && pipePosition > 0 && sonicPosition <= 155;
@@ -59,11 +61,15 @@ const loop = setInterval(() => {
     
     if (collision == true) {
 
+
         clearInterval(loop);
 
-        /* PARAR PIPE E NUVENS */
-        clouds.style.animation = 'none';
-        clouds.style.left = `${cloudsPosition}px`;
+        /* PARAR PIPE E NUVENS */ 
+        clouds1.style.animation = 'none';
+        clouds1.style.left = `${cloudsPosition1}px`;
+        clouds2.style.animation = 'none';
+        clouds2.style.left = `${cloudsPosition2}px`;
+
         pipe.style.left = `${pipePosition}px`;
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
