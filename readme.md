@@ -6,8 +6,7 @@ O que eu quero adicionar:
 
 - Menu interativo
 
-Você pode me encontrar por aqui:
+Você pode me encontrar por [aqui!](https://linktr.ee/notoliveira)
 
-linktr.ee/not_oliveira
 
 Uso livre e aceitando pull requests!
