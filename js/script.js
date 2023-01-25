@@ -9,20 +9,94 @@ var score = 0;
 var jump_timeout = null;
 var collision = false;
 
+var musica1Audio = new Audio("audios/his world.mp3");
+var musica2Audio = new Audio("audios/gravity.mp3");
+var musica3Audio = new Audio("audios/green hill.mp3");
+var musica4Audio = new Audio("audios/endless possibility.mp3");
+var musica5Audio = new Audio("audios/sunshine.mp3");
+
+var teste = localStorage.getItem('aleatorio');
+var musica = localStorage.getItem('musica');
+
+
+function playRandom() {
+    var randomNum = Math.floor(Math.random() * 4);
+
+        if(teste == "true") {
+        switch (randomNum) {
+        case 0:
+            setTimeout (() => {
+                musica1Audio.play();
+            },1000);
+            break;
+        case 1:
+            setTimeout (() => {
+                musica2Audio.play();
+            },1000);
+            break;
+        case 2:
+            setTimeout (() => {
+                musica3Audio.play();
+            },1000);
+            break;
+        case 3:
+            setTimeout (() => {
+                musica4Audio.play();
+            },1000);
+            break;
+        case 4:
+            setTimeout (() => {
+                musica5Audio.play();
+            },1000);
+            break;
+        }
+    } else if(teste == "none") {
+
+    } else{
+        switch (musica) {
+            case 'play1':
+                setTimeout (() => {
+                    musica1Audio.play();
+                },1000);
+                break;
+            case 'play2':
+                setTimeout (() => {
+                    musica2Audio.play();
+                },1000);
+                break;
+            case 'play3':
+                setTimeout (() => {
+                    musica3Audio.play();
+                },1000);
+                break;
+            case 'play4':
+                setTimeout (() => {
+                    musica4Audio.play();
+                },1000);
+                break;
+            case 'play5':
+                setTimeout (() => {
+                    musica5Audio.play();
+                },1000);
+                break;
+            }
+    }
+}
+    playRandom();
 
 function disable()
 {
- document.onkeydown = function (e) 
- {
-  return false;
- }
+    document.onkeydown = function (e) 
+    {
+        return false;
+    }
 }
 function enable()
 {
- document.onkeydown = function (e) 
- {
-    return true;
- }
+    document.onkeydown = function (e) 
+    {
+        return true;
+    }
 }
 
 const jump = () => {
@@ -30,8 +104,8 @@ const jump = () => {
     disable();
     sonic.src = './img/jumping.gif';
     jump_timeout = setTimeout(fall, 1000);
-
-
+    
+    
 };
 
 function fall() {
@@ -40,11 +114,11 @@ function fall() {
     sonic.src = './img/sonic.gif';
     count_jump += 1;
     document.getElementById("count-jump-sonic").textContent=`${count_jump}`;
-
+    
 };
 
 function reload() {
-    window.location.reload();
+    location.href = "jogo.html";
 };
 
 const loop = setInterval(() => {
@@ -63,7 +137,7 @@ const loop = setInterval(() => {
 
 
         clearInterval(loop);
-
+        
         /* PARAR PIPE E NUVENS */ 
         clouds1.style.animation = 'none';
         clouds1.style.left = `${cloudsPosition1}px`;
@@ -90,22 +164,4 @@ const loop = setInterval(() => {
 
 document.addEventListener('keypress', jump);
 
-var musica = localStorage.getItem('musica')
-var musica1Audio = new Audio("audios/his world.mp3")
-var musica2Audio = new Audio("audios/gravity.mp3")
-var musica3Audio = new Audio("audios/green hill.mp3")
-var musica4Audio = new Audio("audios/endless possibility.mp3")
-var musica5Audio = new Audio("audios/sunshine.mp3")
-
-switch (musica) {
-    case 'play1': musica1Audio.play() 
-    break;
-    case 'play2': musica2Audio.play()
-    break;
-    case 'play3': musica3Audio.play()
-    break;
-    case 'play4': musica4Audio.play()
-    break;
-    case 'play5': musica5Audio.play()
-    break;
-}
+var voltar = document.getElementById("voltarMenu").addEventListener("click", () => {location.href = "index.html"})
