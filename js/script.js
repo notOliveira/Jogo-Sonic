@@ -10,9 +10,9 @@ var jump_timeout = null;
 var collision = false;
 
 var musica1Audio = new Audio("audios/his world.mp3");
-var musica2Audio = new Audio("audios/gravity.mp3");
-var musica3Audio = new Audio("audios/green hill.mp3");
-var musica4Audio = new Audio("audios/endless possibility.mp3");
+var musica2Audio = new Audio("audios/super.mp3");
+var musica3Audio = new Audio("audios/intlet.mp3");
+var musica4Audio = new Audio("audios/living.mp3");
 var musica5Audio = new Audio("audios/sunshine.mp3");
 
 var teste = localStorage.getItem('aleatorio');
