@@ -89,3 +89,23 @@ const loop = setInterval(() => {
 }, 1);
 
 document.addEventListener('keypress', jump);
+
+var musica = localStorage.getItem('musica')
+var musica1Audio = new Audio("audios/his world.mp3")
+var musica2Audio = new Audio("audios/gravity.mp3")
+var musica3Audio = new Audio("audios/green hill.mp3")
+var musica4Audio = new Audio("audios/endless possibility.mp3")
+var musica5Audio = new Audio("audios/sunshine.mp3")
+
+switch (musica) {
+    case 'play1': musica1Audio.play() 
+    break;
+    case 'play2': musica2Audio.play()
+    break;
+    case 'play3': musica3Audio.play()
+    break;
+    case 'play4': musica4Audio.play()
+    break;
+    case 'play5': musica5Audio.play()
+    break;
+}
