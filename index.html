@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Sonic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="menu">
+        <h1>SONIC</h1>
+        <button id="iniciar">Iniciar jogo</button> <br>
+        <button id="opções">Músicas</button>
+        </div>
+    </div>
+    <div id="opçõesStuff">
+        <label>Musicas</label> <br>
+        <button id="musica1">His World</button> <br>
+        <button id="musica2">Gravity</button> <br>
+        <button id="musica3">Green Hill</button> <br>
+        <button id="musica4">Endless Possiblity</button>
+        <button id="musica5">Can You Feel The Sunshine?</button>
+        <button id="randomMusic">Aleatória</button>
+        <button id="pararMusica">Sem música</button>
+    </div>
+
+    
+
+<script>
+//menu
+
+var teste2 = false;
+
+var start = document.getElementById("iniciar");
+var opções = document.getElementById("opções");
+var opçõesStuff = document.getElementById("opçõesStuff");
+
+var musica1 = new Audio("audios/his world.mp3");
+var musica2 = new Audio("audios/gravity.mp3");
+var musica3 = new Audio("audios/green hill.mp3");
+var musica4 = new Audio("audios/endless possibility.mp3");
+var musica5 = new Audio("audios/sunshine.mp3");
+
+var pararMusica = document.getElementById("pararMusica").addEventListener("click", () => {
+    musica1.pause();
+    musica1.currentTime = 0;
+    musica2.pause();
+    musica2.currentTime = 0;
+    musica3.pause();
+    musica3.currentTime = 0;
+    musica4.pause();
+    musica4.currentTime = 0;
+    musica5.pause();
+    musica5.currentTime = 0;
+    teste2 = "none"
+    localStorage.setItem('aleatorio', teste2);
+});
+
+var tocarMusica1 = document.getElementById("musica1").addEventListener("click", () => {
+    musica1.play();
+    teste2 = "";
+    localStorage.setItem('musica', 'play1');
+    localStorage.setItem('aleatorio', teste2);
+
+    musica2.pause();
+    musica2.currentTime = 0;
+    musica3.pause();
+    musica3.currentTime = 0;
+    musica4.pause();
+    musica4.currentTime = 0;
+    musica5.pause();
+    musica5.currentTime = 0;
+});
+var tocarMusica2 = document.getElementById("musica2").addEventListener("click", () => {
+    musica2.play();
+    teste2 = "";
+    localStorage.setItem('musica', 'play2');
+    localStorage.setItem('aleatorio', teste2);
+
+    musica1.pause();
+    musica1.currentTime = 0;
+    musica3.pause();
+    musica3.currentTime = 0;
+    musica4.pause();
+    musica4.currentTime = 0;
+    musica5.pause();
+    musica5.currentTime = 0;
+});
+
+var tocarMusica3 = document.getElementById("musica3").addEventListener("click", () => {
+    musica3.play();
+    teste2 = "";
+    localStorage.setItem('musica', 'play3');
+    localStorage.setItem('aleatorio', teste2);
+
+    musica2.pause();
+    musica2.currentTime = 0;
+    musica1.pause();
+    musica1.currentTime = 0;
+    musica4.pause();
+    musica4.currentTime = 0;
+    musica5.pause();
+    musica5.currentTime = 0;
+});
+
+var tocarMusica4 = document.getElementById("musica4").addEventListener("click", () => {
+    musica4.play();
+    teste2 = "";
+    localStorage.setItem('musica', 'play4');
+    localStorage.setItem('aleatorio', teste2);
+
+    musica2.pause();
+    musica2.currentTime = 0;
+    musica3.pause();
+    musica3.currentTime = 0;
+    musica1.pause();
+    musica1.currentTime = 0;
+    musica5.pause();
+    musica5.currentTime = 0;
+});
+
+var tocarMusica5 = document.getElementById("musica5").addEventListener("click", () => {
+    musica5.play();
+    teste2 = "";
+    localStorage.setItem('musica', 'play5');
+    localStorage.setItem('aleatorio', teste2);
+
+    musica2.pause();
+    musica2.currentTime = 0;
+    musica3.pause();
+    musica3.currentTime = 0;
+    musica1.pause();
+    musica1.currentTime = 0;
+    musica4.pause();
+    musica4.currentTime = 0;
+});
+
+var tocarRandom = document.getElementById("randomMusic").addEventListener("click", () => {
+    
+    musica1.pause();
+    musica1.currentTime = 0;
+    musica2.pause();
+    musica2.currentTime = 0;
+    musica3.pause();
+    musica3.currentTime = 0;
+    musica4.pause();
+    musica4.currentTime = 0;
+    musica5.pause();
+    musica5.currentTime = 0;
+
+    teste2 = true;
+
+    localStorage.setItem('aleatorio', "true");
+
+    var randomNum = Math.floor(Math.random() * 4);
+
+    switch (randomNum) {
+        case 0:
+            localStorage.setItem('musica', 'play1');
+            break;
+        case 1:
+            localStorage.setItem('musica', 'play2');
+            break;
+        case 2:
+            localStorage.setItem('musica', 'play3');
+            break;
+        case 3:
+            localStorage.setItem('musica', 'play4');
+            break;
+        case 5:
+            localStorage.setItem('musica', 'play5');
+            break;
+    }
+});
+
+
+start.addEventListener("click", () => {
+    location.href = "jogo.html";
+})
+
+var controle = 0;
+
+opções.addEventListener("click", () => {
+    if(controle % 2 == 0) {
+    opçõesStuff.style.opacity = "100%";
+    opçõesStuff.style.zIndex = "102";
+    opçõesStuff.style.marginTop = "0%";
+    controle++;
+    } else {
+    opçõesStuff.style.opacity = "0%";
+    opçõesStuff.style.zIndex = "102";
+    opçõesStuff.style.marginTop = "-30%" ;
+    controle++;
+    }
+});
+
+
+
+</script>
+</body>
+</html>
