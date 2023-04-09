@@ -6,7 +6,7 @@ Você pode testar o jogo por [aqui!](https://notoliveira.github.io/Jogo-Sonic/)
 
 Uso livre e aceitando pull requests!
 
-![menu](/img/main-menu.png)
+![menu](/img/image.png)
 
 ![game1](/img/game-1.png)
 
